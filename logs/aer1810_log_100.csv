@@ -1,0 +1,121 @@
+file_name,Paper Name,Model,Top-1 Accuracy,file_idx,gpt_vote_ensemble_whole_paper
+1312.6229v4.pdf,,,,0.0,85.82
+1406.2732v1.pdf,,,,1.0,404
+1412.0296v1.pdf,,,,2.0,404
+1412.6598v2.pdf,,,,3.0,58.4
+1502.03167v3.pdf,,,,4.0,74.8
+1503.01224v2.pdf,,,,5.0,404
+1506.04701v3.pdf,,,,6.0,58.0
+1510.00921v6.pdf,,,,7.0,404
+1512.03385v1.pdf,Deep Residual Learning for Image Recognition,ResNet-152,-,,
+1602.07332v1.pdf,,,,8.0,57.1
+1605.07648v4.pdf,,,,9.0,404
+1607.00501v1.pdf,,,,10.0,75.53
+1608.06993v5.pdf,,,,11.0,25.02
+1610.02357v3.pdf,,,,12.0,404
+1610.02391v4.pdf,,,,13.0,70.58
+1611.05244v2.pdf,,,,14.0,404
+1611.05431v2.pdf,,,,15.0,82.3
+1611.07661v2.pdf,,,,16.0,77.58
+1701.06772v2.pdf,,,,17.0,78.2
+1702.07898v2.pdf,,,,18.0,404
+1703.01229v1.pdf,,,,19.0,57.02
+1703.04101v2.pdf,,,,20.0,404
+1703.07479v1.pdf,,,,21.0,404
+1703.09844v5.pdf,Multiscale Dense Networks for Resource Efficient Image Classification,MSDNet,75%,,
+1705.03004v1.pdf,,,,22.0,404
+1707.02968v2.pdf,,,,23.0,79.2
+1708.00260v3.pdf,,,,24.0,75.3
+1708.01246v1.pdf,,,,25.0,404
+1708.04896v2.pdf,,,,26.0,404
+1708.06495v2.pdf,,,,27.0,404
+1709.00663v2.pdf,,,,28.0,-
+1709.05021v1.pdf,,,,29.0,404
+1710.01168v1.pdf,,,,30.0,85.71
+1710.01217v1.pdf,,,,31.0,404
+1710.02286v1.pdf,,,,32.0,59.23
+1710.05982v2.pdf,,,,33.0,82.1
+1710.07558v3.pdf,,,,34.0,404
+1711.01575v3.pdf,,,,35.0,404
+1711.11473v2.pdf,,,,36.0,56.89
+1712.02976v2.pdf,,,,37.0,404
+1712.05055v2.pdf,,,,38.0,404
+1801.04381v4.pdf,,,,39.0,70.6
+1801.09321v3.pdf,,,,40.0,404
+1801.10447v1.pdf,,,,41.0,74.0
+1803.00942v3.pdf,Not All Samples Are Created Equal: Deep Learning with Importance Sampling,ResNet-50,-,,
+1803.04349v1.pdf,,,,42.0,404
+1803.05407v3.pdf,,,,43.0,76.97
+1805.08700v1.pdf,,,,44.0,404
+1805.09501v3.pdf,,,,45.0,83.5
+1807.00578v1.pdf,,,,46.0,91.66
+1807.03247v2.pdf,,,,47.0,75.8
+1807.06521v2.pdf,,,,48.0,77.34
+1807.10108v5.pdf,Effects of Degradations on Deep Neural Network Architectures,V-CapsNet ,-,,
+1807.10119v3.pdf,A Unified Approximation Framework for Compressing and Accelerating Deep Neural Networks,AlexNet,-,,
+1807.11164v1.pdf,ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design ,ShuffleNet v2-50,77.20%,,
+1807.11254v2.pdf,Extreme Network Compression via Filter Group Approximation,VGG16,77.86,,
+1807.11459v1.pdf,Improving Transferability of Deep Neural Networks,ResNet-27,-,,
+1807.11626v3.pdf,MnasNet: Platform-Aware Neural Architecture Search for Mobile ,MnasNet ,75.20%,,
+1808.01097v4.pdf,,,,49.0,35.2
+1809.07436v2.pdf,,,,50.0,404
+1810.01104v1.pdf,,,,51.0,82.1
+1810.12890v1.pdf,,,,52.0,78.13
+1810.13230v2.pdf,,,,53.0,81.0
+1811.00189v3.pdf,,,,54.0,404
+1812.00329v1.pdf,,,,55.0,404
+1812.00332v2.pdf,,,,56.0,75.1
+1901.00711v1.pdf,,,,57.0,404
+1901.10125v5.pdf,,,,58.0,404
+1902.04992v1.pdf,,,,59.0,82.3
+1902.06634v4.pdf,,,,60.0,404
+1902.08546v1.pdf,,,,61.0,404
+1903.00405v1.pdf,,,,62.0,404
+1903.02380v2.pdf,,,,63.0,404
+1903.04064v1.pdf,,,,64.0,404
+1903.09900v1.pdf,,,,65.0,25.1
+1904.01569v2.pdf,,,,66.0,74.7
+1904.01866v2.pdf,,,,67.0,21.65
+1904.02877v1.pdf,,,,68.0,74.96
+1904.04971v3.pdf,,,,69.0,78.3
+1904.05871v1.pdf,,,,70.0,76.7
+1904.06345v2.pdf,,,,71.0,404
+1904.11238v2.pdf,,,,72.0,404
+1904.12848v6.pdf,,,,73.0,79.05
+1905.00397v2.pdf,,,,74.0,80.6
+1905.02649v1.pdf,,,,75.0,76.1
+1905.03670v2.pdf,,,,76.0,80.17
+1905.03672v5.pdf,,,,77.0,404
+1906.00335v1.pdf,,,,78.0,404
+1906.00910v2.pdf,,,,79.0,68.1
+1906.02470v1.pdf,,,,80.0,404
+1906.05750v2.pdf,,,,81.0,73.8
+1906.06423v4.pdf,,,,82.0,86.4
+1906.07912v2.pdf,,,,83.0,404
+1907.01845v5.pdf,,,,84.0,75.3
+1907.02665v1.pdf,,,,85.0,404
+1907.12659v2.pdf,,,,86.0,404
+1908.06022v6.pdf,,,,87.0,71.3
+1908.09699v3.pdf,,,,88.0,21.5
+1909.01056v1.pdf,,,,89.0,404
+1909.07068v4.pdf,,,,90.0,404
+1909.11155v1.pdf,Anchor Loss: Modulating Loss Scale based on Prediction Difficulty,ResNet-50,76.82%,,
+1909.13863v1.pdf,XNOR-Net++: Improved Binary Neural Networks,Binary ResNet-18,57.10%,,
+4084-online-learning-in-the-manifold-of-low-rank-matrices.pdf,,,,91.0,404
+4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf,,,,92.0,62.5
+8110-glomo-unsupervised-learning-of-transferable-relational-graphs.pdf,,,,93.0,74.2
+Chu_Spot_and_Learn_A_Maximum-Entropy_Patch_Sampler_for_Few-Shot_Image_CVPR_2019_paper.pdf,,,,94.0,404
+D18-1177.pdf,,,,95.0,404
+Gan_DevNet_A_Deep_2015_CVPR_paper.pdf,,,,96.0,70.3
+Hu_Weakly_Supervised_Image_Classification_Through_Noise_Regularization_CVPR_2019_paper.pdf,,,,97.0,68.94
+Kobayashi_Analyzing_Filters_Toward_CVPR_2018_paper.pdf,,,,98.0,404
+N18-4020.pdf,,,,99.0,404
+Sharma_Classification-Driven_Dynamic_Image_CVPR_2018_paper.pdf,Classification-Driven Dynamic Image Enhancement ,,-,,
+Tamaazousti_MuCaLe-Net_Multi_Categorical-Level_CVPR_2017_paper.pdf,MuCaLe-Net: Multi Categorical-Level Networks to Generate More Discriminating Features ,MuCaLe-Net ,-,,
+Xiao_Learning_From_Massive_2015_CVPR_paper.pdf,Learning from Massive Noisy Labeled Data for Image Classification ,,-,,
+Xie_Hyper-Class_Augmented_and_2015_CVPR_paper.pdf,Hyper-class Augmented and Regularized Deep Learning for Fine-grained Image Classification ,HAR-CNN ,-,,
+Yan_HD-CNN_Hierarchical_Deep_ICCV_2015_paper.pdf,HD-CNN: Hierarchical Deep Convolutional Neural Networks for Large Scale Visual Recognition ,HD-CNN ,37.92,,
+Zhang_Compact_Representation_for_2014_CVPR_paper.pdf,Compact Representation for Image Classification: To Choose or to Compress? ,,-,,
+Zhang_Supplementary_Meta-Learning_Towards_ICCV_2017_paper.pdf,Supplementary Meta-Learning: Towards a Dynamic Model For Deep Neural Networks ,MLNN ,-,,
+Zhao_Saliency_Detection_by_2015_CVPR_paper.pdf,Saliency Detection by Multi-Context Deep Learning ,,-,,
+omniVec_2023.pdf,OmniVec: Learning robust representations with cross modal sharing,OminiVec (FT),92.40%,,

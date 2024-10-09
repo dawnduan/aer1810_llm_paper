@@ -34,105 +34,91 @@ import os, requests, sys, pathlib
 import time
 import pandas as pd
 from tqdm import tqdm
+from utils.groundtruth_parser import extract_text_from_pdf_as_dict, find_fname
 
-"""##
+# """##
+#
+# ## GPT (FULL TEXT, 10K, 30K)
+#
+# ### preprocess for groundtruths, relevant result page parsing
+# """
+#
+# fn = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/groundtruth_table.csv'
+# groundtruth_df = pd.read_csv(fn)
+# # groundtruth_df
+#
+# find_fname = lambda pdf_path: str(pdf_path).split('/')[-1]
+#
+# def extract_text_from_pdf_as_dict(pdf_path):
+#     """
+#     Extract text from a PDF at the specified path using PyMuPDF.
+#     """
+#     with fitz.open(pdf_path) as doc:
+#         return {
+#             i+1:page.get_text() # starting from 1
+#             for i,page in enumerate(doc)
+#         }
+#
+#
+# key_indices = groundtruth_df.page_key.values
+# accuracies = groundtruth_df['Top-5 Accuracy'].values
+#
+# # first key is file nm; second is page number for answer
+# ground_truths = {
+#     idx: [find_fname(path), key_indices[idx]]
+#     for idx, path in enumerate(sorted_pdf_paths)
+# }
+# ground_truths
+# pdf_keys = {
+#     path : key_indices[idx]
+#     for idx, path in enumerate(sorted_pdf_paths)
+# }
+# pdf_page_lengths = {
+#     idx: [path, key_indices[idx], max(extract_text_from_pdf_as_dict(path))]
+#     for idx, path in enumerate(sorted_pdf_paths)
+# }
+#
+#
+# # pdf_page_lengths
+# sorted_pdf_key_page = {
+#     idx: [path, key_indices[idx], extract_text_from_pdf_as_dict(path)[key_indices[idx]] if key_indices[idx]>0 else '']
+#     for idx, path in enumerate(sorted_pdf_paths)
+# }
+#
+# # sorted_pdf_key_page
+#
+# folder_path_20 = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/all_papers_20/'
+# sorted_pdf_paths_20 = sorted([path for path in Path(folder_path_20).iterdir() if is_pdf(path)])
+# sorted_pdf_key_page_20 = {
+#         idx: [find_fname(path), path]
+#         for idx, path in enumerate(sorted_pdf_paths_20)
+#     }
+# df_20 = pd.DataFrame.from_dict(
+#     sorted_pdf_key_page_20,orient='index',
+#     columns=['file_name', 'path',]
+# )
+# from functools import reduce
+# fn = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/groundtruth_table.csv'
+# groundtruth_df = pd.read_csv(fn)
+# # groundtruth_df
+# template = groundtruth_df.copy()[['file_name', 'Paper Name', 'Model', 'Top-1 Accuracy']]
+# reduce(lambda l, r: pd.merge(l, r, on=['file_name'],how='right'), [template, df_20])
+#
+#
+#
+#
+# folder_path_100 = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/all_papers_100/'
+# sorted_pdf_paths_100 = sorted([path for path in Path(folder_path_100).iterdir() if is_pdf(path)])
+# sorted_pdf_key_page_100 = {
+#         idx: [find_fname(path), path]
+#         for idx, path in enumerate(sorted_pdf_paths_100)
+#     }
+# df_100 = pd.DataFrame.from_dict(
+#     sorted_pdf_key_page_100,orient='index',
+#     columns=['file_name', 'path',]
+# )
+# reduce(lambda l, r: pd.merge(l, r, on=['file_name'],how='outer'), [template, df_100])
 
-## GPT (FULL TEXT, 10K, 30K)
-
-### preprocess for groundtruths, relevant result page parsing
-"""
-
-fn = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/groundtruth_table.csv'
-groundtruth_df = pd.read_csv(fn)
-# groundtruth_df
-
-find_fname = lambda pdf_path: str(pdf_path).split('/')[-1]
-
-def extract_text_from_pdf_as_dict(pdf_path):
-    """
-    Extract text from a PDF at the specified path using PyMuPDF.
-    """
-    with fitz.open(pdf_path) as doc:
-        return {
-            i+1:page.get_text() # starting from 1
-            for i,page in enumerate(doc)
-        }
-
-
-key_indices = groundtruth_df.page_key.values
-accuracies = groundtruth_df['Top-5 Accuracy'].values
-
-# first key is file nm; second is page number for answer
-ground_truths = {
-    idx: [find_fname(path), key_indices[idx]]
-    for idx, path in enumerate(sorted_pdf_paths)
-}
-ground_truths
-pdf_keys = {
-    path : key_indices[idx]
-    for idx, path in enumerate(sorted_pdf_paths)
-}
-pdf_page_lengths = {
-    idx: [path, key_indices[idx], max(extract_text_from_pdf_as_dict(path))]
-    for idx, path in enumerate(sorted_pdf_paths)
-}
-
-
-# pdf_page_lengths
-sorted_pdf_key_page = {
-    idx: [path, key_indices[idx], extract_text_from_pdf_as_dict(path)[key_indices[idx]] if key_indices[idx]>0 else '']
-    for idx, path in enumerate(sorted_pdf_paths)
-}
-
-# sorted_pdf_key_page
-
-folder_path_20 = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/all_papers_20/'
-sorted_pdf_paths_20 = sorted([path for path in Path(folder_path_20).iterdir() if is_pdf(path)])
-sorted_pdf_key_page_20 = {
-        idx: [find_fname(path), path]
-        for idx, path in enumerate(sorted_pdf_paths_20)
-    }
-df_20 = pd.DataFrame.from_dict(
-    sorted_pdf_key_page_20,orient='index',
-    columns=['file_name', 'path',]
-)
-from functools import reduce
-fn = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/groundtruth_table.csv'
-groundtruth_df = pd.read_csv(fn)
-# groundtruth_df
-template = groundtruth_df.copy()[['file_name', 'Paper Name', 'Model', 'Top-1 Accuracy']]
-reduce(lambda l, r: pd.merge(l, r, on=['file_name'],how='right'), [template, df_20])
-
-
-
-
-folder_path_100 = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/all_papers_100/'
-sorted_pdf_paths_100 = sorted([path for path in Path(folder_path_100).iterdir() if is_pdf(path)])
-sorted_pdf_key_page_100 = {
-        idx: [find_fname(path), path]
-        for idx, path in enumerate(sorted_pdf_paths_100)
-    }
-df_100 = pd.DataFrame.from_dict(
-    sorted_pdf_key_page_100,orient='index',
-    columns=['file_name', 'path',]
-)
-reduce(lambda l, r: pd.merge(l, r, on=['file_name'],how='outer'), [template, df_100])
-
-# preprocessing
-import regex as re
-
-def clean_accuracy(v: str)->str:
-    return v.strip('0%')
-
-def find_groundtruth_accuracy_in_page(idx, pdf_path, rel_page):
-    accuracy = clean_accuracy(accuracies[idx])
-    found_accuracy_in = accuracy in rel_page
-    found_accuracy_re = re.search(pattern=accuracy, string=rel_page)
-    return idx, find_fname(pdf_path), accuracy, found_accuracy_in, found_accuracy_re, rel_page
-
-
-pd.DataFrame(data=[find_groundtruth_accuracy_in_page(idx, pdf_path, rel_page) for idx, (pdf_path, rel_key, rel_page) in sorted_pdf_key_page.items()],
-             columns=['file_idx', 'file_name', 'accuracy', 'found_accuracy_in', 'found_accu_re', 'rel_page',])
 
 """## Chunk methods
 
@@ -545,9 +531,11 @@ res_df_whole_paper = pd.DataFrame(data=[[idx, find_fname(pdf_path), _vote_emsemb
 reduce(lambda l, r: pd.merge(l, r, on=['file_name'],how='outer'), [template, res_df_whole_paper])
 
 
+def main():
+    pass
 
-
-
+if __name__ == "__main__":
+    main()
 
 
 

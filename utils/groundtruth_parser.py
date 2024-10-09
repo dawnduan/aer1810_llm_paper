@@ -2,7 +2,7 @@
 import pandas as pd
 import fitz  # PyMuPDF
 
-fn = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/groundtruth_table.csv'
+fn = './data/groundtruth_table.csv'
 groundtruth_df = pd.read_csv(fn)
 
 from pathlib import Path
@@ -50,4 +50,38 @@ sorted_pdf_key_page = {
 }
 
 # sorted_pdf_key_page
+#
+# folder_path_20 = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/all_papers_20/'
+# sorted_pdf_paths_20 = sorted([path for path in Path(folder_path_20).iterdir() if is_pdf(path)])
+# sorted_pdf_key_page_20 = {
+#         idx: [find_fname(path), path]
+#         for idx, path in enumerate(sorted_pdf_paths_20)
+#     }
+# df_20 = pd.DataFrame.from_dict(
+#     sorted_pdf_key_page_20,orient='index',
+#     columns=['file_name', 'path',]
+# )
+# from functools import reduce
+# fn = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/groundtruth_table.csv'
+# groundtruth_df = pd.read_csv(fn)
+# # groundtruth_df
+# template = groundtruth_df.copy()[['file_name', 'Paper Name', 'Model', 'Top-1 Accuracy']]
+# reduce(lambda l, r: pd.merge(l, r, on=['file_name'],how='right'), [template, df_20])
+#
+#
+#
+#
+# folder_path_100 = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/all_papers_100/'
+# sorted_pdf_paths_100 = sorted([path for path in Path(folder_path_100).iterdir() if is_pdf(path)])
+# sorted_pdf_key_page_100 = {
+#         idx: [find_fname(path), path]
+#         for idx, path in enumerate(sorted_pdf_paths_100)
+#     }
+# df_100 = pd.DataFrame.from_dict(
+#     sorted_pdf_key_page_100,orient='index',
+#     columns=['file_name', 'path',]
+# )
+# reduce(lambda l, r: pd.merge(l, r, on=['file_name'],how='outer'), [template, df_100])
+
+
 

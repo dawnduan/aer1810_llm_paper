@@ -16,9 +16,9 @@ def convert_text_pymupdf(pdf_path, destination_txt_folder):
     # write as a binary file to support non-ASCII characters
     final_path = destination_txt_folder+fname
     pathlib.Path(final_path+ ".txt").write_bytes(text.encode())
-convert_text_pymupdf(pdf_path, destination_txt_folder)
-[convert_text_pymupdf(pdf_path, destination_txt_folder) for pdf_path in sorted_pdf_paths]
-# end with .pdf.txt
+# convert_text_pymupdf(pdf_path, destination_txt_folder)
+# [convert_text_pymupdf(pdf_path, destination_txt_folder) for pdf_path in sorted_pdf_paths]
+# # end with .pdf.txt
 
 find_fname = lambda pdf_path: str(pdf_path).split('/')[-1]
 
@@ -33,5 +33,7 @@ def extract_text_from_pdf(pdf_path):
             text += page.get_text()
     return text
 # Extract text from the downloaded PDF
-paper_text = extract_text_from_pdf(pdf_path)
-print(paper_text[1000:])
+# paper_text = extract_text_from_pdf(pdf_path)
+# print(paper_text[1000:])
+
+is_pdf = lambda pdf_path: str(pdf_path).split('.')[-1] == 'pdf'

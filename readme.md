@@ -4,5 +4,6 @@ that match the SIGSOFT Empirical Standards items.
 Project milestones:
 * Obtain two datasets of scientific papers in fields with an empirical component
 * Manually annotate a small dataset
+  * Dataset II: 60-60-60
 * Validate the process of extracting a particular item from a large dataset
 * Perform an initial meta-study using the system

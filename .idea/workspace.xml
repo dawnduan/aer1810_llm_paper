@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe9c902-2c9c-4f53-a6b8-4a70daf45880" name="Changes" comment="remove credentials" />
+    <list default="true" id="7fe9c902-2c9c-4f53-a6b8-4a70daf45880" name="Changes" comment="remove zip aligned with readme">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dev_labels.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dev_labels.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,21 +22,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "dawnduan"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dawnduan&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/dawnduan/aer1810_llm_paper.git",
-    "accountId": "b3abf27e-7715-48cf-8536-72efdd76942c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dawnduan/aer1810_llm_paper.git&quot;,
+    &quot;accountId&quot;: &quot;b3abf27e-7715-48cf-8536-72efdd76942c&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2nAKiRh0EPZhMvXDNqsLvQK7AJF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,15 +44,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "first__commit",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "kdd__2025",
     "last_opened_file_path": "/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/hr_related/School/PhD_Direct/uoft/MIE/MIE_Guerzhoy/aer1810_llm_paper"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Markdown"
+    ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-0e3be3396995-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23339.19" />
+        <option value="bundled-python-sdk-dfff61a61320-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.25410.159" />
       </set>
     </attachedChunks>
   </component>
@@ -77,7 +93,31 @@
       <option name="project" value="LOCAL" />
       <updated>1728411416922</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="cosmetics for the data dir + data description and file structure">
+      <option name="closed" value="true" />
+      <created>1748299790960</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748299790960</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update the location of readme">
+      <option name="closed" value="true" />
+      <created>1748299855874</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1748299855874</updated>
+    </task>
+    <task id="LOCAL-00005" summary="remove zip aligned with readme">
+      <option name="closed" value="true" />
+      <created>1748299926344</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1748299926344</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +133,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove credentials" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove credentials" />
+    <MESSAGE value="cosmetics for the data dir + data description and file structure" />
+    <MESSAGE value="update the location of readme" />
+    <MESSAGE value="remove zip aligned with readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove zip aligned with readme" />
   </component>
 </project>

@@ -5,7 +5,6 @@ We release **100 ImageNet papers** with page-level ground-truth labels.
 ```
 
 data/
-├── papers/                # 100 PDFs named by arXiv ID  (120 MB zip)
 ├── dev\_labels.csv         # gold labels (see columns below)
 └── dev\_labels.json        # same content in JSON
 

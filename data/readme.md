@@ -34,12 +34,5 @@ print(df.head(8))
 
 `404` → metric absent (e.g.\ only Top-5 or validation split).
 
-#### Download links
-
-| File                | Size   | Link                                                                                                          |
-| ------------------- | ------ | ------------------------------------------------------------------------------------------------------------- |
-| PDFs (`papers.zip`) | 120 MB | [https://zenodo.org/record/xxxx/files/papers.zip](https://zenodo.org/record/xxxx/files/papers.zip)            |
-| `dev_labels.csv`    | 34 kB  | [https://zenodo.org/record/xxxx/files/dev\_labels.csv](https://zenodo.org/record/xxxx/files/dev_labels.csv)   |
-| `dev_labels.json`   | 46 kB  | [https://zenodo.org/record/xxxx/files/dev\_labels.json](https://zenodo.org/record/xxxx/files/dev_labels.json) |
 
 > All PDFs are distributed for research and benchmarking only; copyright remains with the original publishers.

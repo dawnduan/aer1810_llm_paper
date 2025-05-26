@@ -136,7 +136,7 @@ def parse_gpt_with_page_prompt(page_with_res, prompt, openai_api_key=OPENAI_API_
     return prompt_value
 
 
-def delayed_completion(delays_in_sec, **kwargs):
+def delayed_parse_gpt_with_page_prompt(delays_in_sec, **kwargs):
     time.sleep(delays_in_sec)
     return parse_gpt_with_page_prompt(**kwargs)
 
@@ -155,8 +155,6 @@ def parse_gpt_with_vote(sentences_and_accuracies, prompt, openai_api_key = OPENA
 
 
 
-
-
 def chunk_text_keys(keys, stepsize):
     lis = []
     sublis = []
@@ -169,6 +167,10 @@ def chunk_text_keys(keys, stepsize):
 
 
 def _vote_emsemble_across_paper(idx, pdf_path, prompt_self_veri, prompt_vote_accuracy,):
+    '''
+    Input: 
+    Output:
+    '''
     # print('expect ', groundtruth_df[['Paper Name','Model','Top-1 Accuracy']].iloc[idx].values)
     text_dict = extract_text_from_pdf_as_dict(pdf_path)
     chunked_texts = chunk_text_keys(text_dict.keys(), stepsize=4)
@@ -177,17 +179,17 @@ def _vote_emsemble_across_paper(idx, pdf_path, prompt_self_veri, prompt_vote_acc
     token_limit_per_minute = 10000
     delay = 60.0 / token_limit_per_minute * avg_section_lenth / 3
 
-    # compose sublist
+    # compose sublist: verify prompt
     responses_lis = []
     for _, sublis in enumerate(chunked_texts):
         rel_page = ''.join([texts for pg_num, texts in text_dict.items() if pg_num in sublis])
         print(sublis, len(rel_page) / 4)
-        responses = [delayed_completion(delays_in_sec=delay, page_with_res=rel_page, prompt=prompt_self_veri) for i in
+        responses = [delayed_parse_gpt_with_page_prompt(delays_in_sec=delay, page_with_res=rel_page, prompt=prompt_self_veri) for i in
                      range(5)]
         responses_lis.append(responses)
         print(responses)
 
-    # assumption is that the vote_ensemble will consistently return NA or Results
+    # assumption is that the vote_ensemble will consistently return NA or Results try voting
     relevant_response = [parse_gpt_with_vote(res, prompt_vote_accuracy, openai_api_key) for res in responses_lis]
     rel_res = [ans for ans in relevant_response if ans != '404']
     final_res = parse_gpt_with_vote(rel_res, prompt_vote_accuracy) if rel_res else '404'
@@ -218,7 +220,7 @@ def main():
     reduce(lambda l, r: pd.merge(l, r, on=['file_name'],how='outer'), [template, df_100])
 
 
-
+    # main method for vote_emsemble
     res_df_whole_paper = pd.DataFrame(data=[
         [idx, find_fname(pdf_path),
          _vote_emsemble_across_paper(idx, pdf_path, prompt_self_veri, prompt_vote_accuracy,)] \

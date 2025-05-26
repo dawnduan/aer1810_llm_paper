@@ -4,12 +4,12 @@
 
 ### 1  Motivation
 Imagine you are a new CV student preparing a submission.
-To show progress you need yesterday’s state-of-the-art—Top-1 ImageNet accuracy. Those values are scattered across tables, main contents, and sometimes only in figures. Collecting them by hand is slow and error-prone.
+To show progress you need yesterday’s state-of-the-art—Top-1 accuracy from ImageNet . Those values are scattered across tables, main contents, and sometimes only in figures. Collecting them by hand is slow and error-prone.
 
 
  First thing is to figure out SOTA performances from the literatures. Particularly Image Classification on ImageNet datasets has been a popular leaderboard since the start of the AlexNet around 2011. Putting together the leaderboard involves lots of manual efforts to extract, verify and consolidate from literatures and these hasn’t been non-trivial efforts. 
 
-This ties back nicely to our work. Our work focus on the extraction of Top-1 Accuracy reported on ImageNet for Image Recognition tasks. 
+This ties back nicely to our work. Our work focus on the extraction of Top-1 Accuracy reported on ImageNet for Image classification tasks. 
 
 We present EXTRACT-AND-VERIFY, an end-to-end large language model (LLM)
 pipeline that automatically extracts performance metrics from scientific papers.
@@ -20,7 +20,7 @@ We report that our system correctly extracts
 the Top-1 accuracy in 67% on the development set, outperforming prior work.
 
 Trends of literature has influenced our work.
-SCILEAD, submitted in Nov 24 EMNLP, contributes a manual curated scientific leaderboard datsets (around 40 papers). They method is LLM –based method that automatically construct scientific leaderboard.
+SCILEAD, accpted in Nov 24 EMNLP, contributes a manual curated scientific leaderboard datsets (around 40 papers). They method is LLM –based method that automatically construct scientific leaderboard.
 
 We are also influenced by recent trends of prompting techiqnues. Famour few shot manner, self-critique and self-refine are the major ones.
 

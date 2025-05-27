@@ -242,33 +242,6 @@ reduce(lambda l, r: pd.merge(l, r, on=['file_name'],how='right'), [template, new
 
 reduce(lambda l, r: pd.merge(l, r, on=['file_name'],how='outer'), [template, res_df_whole_paper])
 
-"""## Results with increased paper size (100)
-
-#### Parse 100 pdfs to the destination folders
-"""
-
-import shutil
-import os
-
-# Define source and destination folder paths
-source_folder = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/'
-destination_folder = '/Users/dawn.duan/Library/CloudStorage/OneDrive-CanadianTire/Documents/tetris/ivado_or/tetris-api-worker/optimization/local_experiments/aer1810/10_benchmark_datasets/all_papers_100/'
-
-existing_fns = set([find_fname(pdf_path) for pdf_path in sorted_pdf_paths] + [find_fname(pdf_path) for pdf_path in sorted_pdf_paths_20])
-files = os.listdir(source_folder)
-pdf_files = [f for f in files if f.endswith('.pdf') if f not in existing_fns]
-pdf_files
-
-# Loop through the list of PDF files and move them
-for pdf_file in pdf_files[:100]:  # Move only 100 PDF files
-    source_file = os.path.join(source_folder, pdf_file)
-    destination_file = os.path.join(destination_folder, pdf_file)
-
-    # Move the file
-    shutil.move(source_file, destination_file)
-
-print(f'Moved {len(pdf_files[:100])} PDF files from {source_folder} to {destination_folder}')
-
 """## Chunk 100 pdfs"""
 
 prompt_self_veri = """

@@ -38,7 +38,7 @@ extract-and-verify/
 ## 📦 Dataset  (100 ImageNet papers)
 
 A zip archive of PDFs plus page-level labels (CSV + JSON).  
-Download instructions and column definitions are in [`data/README.md`](data/README.md).
+Download instructions and column definitions are in [`data/README.md`](data/readme.md).
 
 
 ---

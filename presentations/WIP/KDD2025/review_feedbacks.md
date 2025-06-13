@@ -5,7 +5,7 @@
 
 ###  Dataset bias and difficulty distribution
 The sources papers were **randomly sampled from the first 100 Paper‑with‑Code API hits *after shuffling***; we could
-1. add this random‑seed line and publish the shuffle list for transparency. 
+1. add the random‑seed line in github. 
 2. using heuristic sorting like publish year
 
 > R2C1: Dev set is retrieved through the order of API results and is not fully clear if it introduces any bias. There is no analysis on the distribution of difficulty levels in the input dataset.
@@ -23,7 +23,7 @@ Our current work select the **maximum Top‑1 accuracy** among models that the p
 ---
 
 ### Failure analysis (why 67, not 100)
-We will
+It was briefly mentioned for valid sample in the regression metrics sections. I will continously clarify the details in 3.3 Dataset Alignment on ImageNet. 
 
 
 > R2C5 No analysis on the final accuracy 67 / why it is unable to retrieve scores from other papers?

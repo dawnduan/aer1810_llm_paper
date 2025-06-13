@@ -37,3 +37,10 @@ def extract_text_from_pdf(pdf_path):
 # print(paper_text[1000:])
 
 is_pdf = lambda pdf_path: str(pdf_path).split('.')[-1] == 'pdf'
+
+
+
+
+
+
+

@@ -58,11 +58,10 @@ Right: Top-1 hidden in a table (hard).
 
 ## 🛠 Roadmap
 
-* Expand dev set (500~1000 papers; multiple domains)
-* Extend to Top-5, mAP, BLEU (multi-metric mode)
+* Getting results for test set with statistical significance (500~1000 papers with a focus on Image Classification on ImageNet)
 * Fine-tune LLM or add retrieval layer for robustness
 * Plug into ARR-style reviewer dashboard for automatic claim checking
-
+* Extend to Top-5, mAP, BLEU (multi-metric mode)
 ---
 
 

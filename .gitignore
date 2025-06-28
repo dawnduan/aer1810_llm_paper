@@ -1,3 +1,5 @@
 # .gitignore
 .env
 ./data/exp_1000_papers
+./data/archieve 
+./assets/error_analysis

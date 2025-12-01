@@ -1,6 +1,3 @@
-📄 **NeurIPS LLM Eval paper (OpenReview):**  
-[https://openreview.net/pdf?id=p0DeYk22Xu](https://openreview.net/pdf?id=p0DeYk22Xu)
-
 
 
 <div align="center">
@@ -22,6 +19,8 @@ ImageNet dataset and manually annotate it.
 2. We report that our system correctly extracts
 the Top-1 accuracy in 67% on the development set, slightly outperformning prior work. Though we would report things with more statistical significance reporting results on test set.
 
+---
+📰 **News:** Our work has been accepted to the **NeurIPS 2025 LLM Evaluation Workshop** 🎉 [Paper][https://openreview.net/pdf?id=p0DeYk22Xu](https://openreview.net/pdf?id=p0DeYk22Xu)
 ---
 
 ## 🖇 Project structure

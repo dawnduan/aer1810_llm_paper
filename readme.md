@@ -20,7 +20,11 @@ ImageNet dataset and manually annotate it.
 the Top-1 accuracy in 67% on the development set, slightly outperformning prior work. Though we would report things with more statistical significance reporting results on test set.
 
 ---
-📰 **News:** Our work has been accepted to the **NeurIPS 2025 LLM Evaluation Workshop** 🎉 [Paper][https://openreview.net/pdf?id=p0DeYk22Xu](https://openreview.net/pdf?id=p0DeYk22Xu)
+
+> 📰 **News**  
+> Our work has been **accepted to the NeurIPS 2025 LLM Evaluation Workshop**! 🎉  
+> 📄 **Paper (OpenReview):** [https://openreview.net/pdf?id=p0DeYk22Xu](https://openreview.net/pdf?id=p0DeYk22Xu)
+
 ---
 
 ## 🖇 Project structure
